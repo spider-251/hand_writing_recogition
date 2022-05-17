@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>Handwriting Recognition</title>
+  </head>
+  <body>
+    <main>
+      <h1>Handwriting Recognition</h1>
+      <section>
+        <!-- <form method="post" enctype=multipart/form-data>
+          <p>
+            <input
+              type="file"
+              accept="image/*"
+              name="file"
+              id="file"
+              onchange="loadFile(event)"
+              style="display: none"
+            />
+          </p>
+          <p>
+            <label for="file", style="cursor: pointer;">Upload handwriting image</label>
+          </p>
+          <p><img id="output" width="500" height="300" /></p>
+         <input type="sumbit" , value="Upload">
+        </form> -->
+     <form method=post enctype=multipart/form-data >
+        
+      <input type=file name=file onchange = "loadFile(event)">
+        <p>
+      <label for="file", style="cursor: pointer; ">Upload handwriting image</label></p>
+      <p><img id="output" width="300" height="300" /></p>
+     <input type=submit value=Upload>
+    </form>
+      </section>
+      <section id="try">
+        <p>
+          <output type="text" id="txtop"></output>
+          <label for="txop"
+            >Converted text output :: <strong>{{ context.rec }}</strong>
+          </label>
+        </p>
+        <br>
+        <p>
+          <label for="txop"
+            >Confidence level of the predicted output is ::
+            <strong>{{ context.prob }}</strong>
+          </label>
+          
+           <p><br><img src="{{ context.fpath }}" id = "ipimg" ></p>
+   <!-- /* <p><br><img src="../static/uploadimg.jpg" class="ipimg" style="width:300px;height:300px;"></p> */ -->
+        </p>
+      </section>
+      
+
+      <section class="description"></section>
+    </main>
+    <script src="../static/script.js"></script>
+  </body>
+</html>
